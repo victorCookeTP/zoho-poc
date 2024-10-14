@@ -1,10 +1,7 @@
-## HEAT APP - Howdy English Assessment Task
+## ZOHO EMBEDDED SIGN URL PROOF OF CONCEPT
 
-Initial English Assestment task for candidates using AI to create questionnaire and correct the answers provided by the candidate.
+This is just a small POC to test the funcionality of the embedded sign url (API by Zoho)[https://www.zoho.com/sign/api/embedded-signing.html]
 
-## Structure
-
-The project consists of two folders, `heat-back` for the back end created with NodeJs & Express and `heat-from` for the frontend created with React & Next
 
 ## Getting Started
 
