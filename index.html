@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoho Embedded Signing POC</title>
+</head>
+<body>
+    <h2>Zoho Embedded Signing POC</h2>
+    
+    <form id="signing-form">
+        <label for="recipient-name">Recipient Name:</label>
+        <input type="text" id="recipient-name" name="recipientName" required>
+        
+        <label for="recipient-email">Recipient Email:</label>
+        <input type="email" id="recipient-email" name="recipientEmail" required>
+        
+        <label for="recipient-email">Template Id:</label>
+        <input type="text" id="template-id" name="documentId" required>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="iframe-container"></div>
+
+    <script>
+        document.getElementById('signing-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const recipientName = document.getElementById('recipient-name').value;
+            const recipientEmail = document.getElementById('recipient-email').value;
+            const templateId = document.getElementById('template-id').value;
+            const port = 5503 // whatever port is in use
+            
+            // Send payload to backend
+            const response = await fetch(`http://localhost:${port}/api/zoho-sign`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    recipientName,
+                    recipientEmail,
+                    templateId
+                }),
+            });
+            
+            const data = await response.json();
+            
+            // Embed Zoho sign iframe
+            if (data.signingUrl) {
+                window.open(data.signingUrl, '_blank');
+            } else {
+                alert('Error generating signing URL');
+            }
+        });
+    </script>
+</body>
+</html>
