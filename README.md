@@ -1,6 +1,6 @@
 ## ZOHO EMBEDDED SIGN URL PROOF OF CONCEPT
 
-This is just a small POC to test the funcionality of the embedded sign url (API by Zoho)[https://www.zoho.com/sign/api/embedded-signing.html]
+This is just a small POC to test the funcionality of the embedded sign url [API by Zoho](https://www.zoho.com/sign/api/embedded-signing.html)
 
 
 ## Getting Started
@@ -29,14 +29,15 @@ To test the Backend you can try:
 ```
 POST /api/zoho-sign
 
-payload: {
+body: 
+{
     "templateId": <template-id>,
     "recipientName": <recipient-name>,
     "recipientEmail": <recipient-email>
 }
 ```
 
-Or you can use the form in the 'index.html'  file as you prefer.
+Or you can use the form in the 'index.html'  file as you prefer. If the POC FE work it should open a new tab with the url for the signature!
 
 
 ## Environment variables
