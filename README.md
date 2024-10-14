@@ -42,4 +42,4 @@ Or you can use the form in the 'index.html'  file as you prefer. If the POC FE w
 
 ## Environment variables
 
-Both the frontend and backend has an example `.env.development` with the variables needed to run the app, check the real values with a code owner to spin your local environment!
+Envieronmental vars example: `.env.development` with the variables needed to run the app, check some working values with a code owner to spin your local environment!
