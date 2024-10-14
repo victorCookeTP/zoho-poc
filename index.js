@@ -75,7 +75,8 @@ app.post('/api/zoho-sign', async (req, res) => {
         },
       }
     )
-
+    
+    // SignURL creation with the requestId and actionId we received from the doc creation response!  
     const requestId = documentCreationResponse.data.requests.request_id
 
     const actionId = documentCreationResponse.data.requests.actions[0].action_id
