@@ -47,7 +47,7 @@
             
             const data = await response.json();
             
-            // Embed Zoho sign iframe
+            // if we received a signedUrl, open it in a new window, iframes had some issues with validated domains for this POC
             if (data.signingUrl) {
                 window.open(data.signingUrl, '_blank');
             } else {
