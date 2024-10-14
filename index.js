@@ -25,9 +25,9 @@ async function getZohoAccessToken() {
 // Endpoint to handle signing request
 app.post('/api/zoho-sign', async (req, res) => {
   const { recipientName, recipientEmail, templateId, access_token } = req.body
-  // Check if documentId is provided
+  // Check if templateID is provided
   if (!templateId) {
-    return res.status(400).json({ error: 'Document ID is required' })
+    return res.status(400).json({ error: 'Template ID is required' })
   }
 
   try {
@@ -75,7 +75,7 @@ app.post('/api/zoho-sign', async (req, res) => {
         },
       }
     )
-    
+
     // SignURL creation with the requestId and actionId we received from the doc creation response!  
     const requestId = documentCreationResponse.data.requests.request_id
 
